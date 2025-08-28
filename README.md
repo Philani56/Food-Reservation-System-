@@ -68,7 +68,7 @@ Admins can manage reservations, track statuses, and view the full reservation li
 - **Philani Khumalo**
 
 ### 📬 Contact
-- 📧 Email: [your-email@example.com](mailto:khumalophilani580@gmail.com)  
+- 📧 Email: (mailto:khumalophilani580@gmail.com)  
 - 💼 LinkedIn: [linkedin.com/in/philani-khumalo](https://www.linkedin.com/in/nhlakanipho-philani-khumalo-679726224/)  
 - 🌐 Portfolio: [https://philani-portfolio.netlify.app/](https://philani-khumalo-portfolio.vercel.app/)  
 - 💻 GitHub: [https://github.com/Philani56](https://github.com/Philani56)  
