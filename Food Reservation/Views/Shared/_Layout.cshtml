@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Food Reservation</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        /* Navbar */
+        .navbar {
+            background-color: #1b4332; /* dark green */
+            padding: 0.8rem 1rem;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #ffb347 !important; /* soft orange */
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            margin-left: 1rem;
+            transition: all 0.2s ease;
+        }
+
+            .nav-link:hover {
+                color: #ffb347 !important; /* orange highlight */
+                text-decoration: underline;
+            }
+
+        /* Body */
+        body {
+            background-color: #fdfdfb; /* light background for contrast */
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        /* Container */
+        .container-main {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons in navbar */
+        .btn-nav {
+            border-radius: 20px;
+            padding: 0.35rem 1rem;
+            font-weight: 500;
+            color: #fff;
+            background-color: #ff7043; /* orange button */
+            border: none;
+            transition: background 0.3s ease;
+        }
+
+            .btn-nav:hover {
+                background-color: #e85d04; /* darker orange */
+                color: white;
+            }
+
+        /* Footer */
+        footer {
+            background-color: #1b4332; /* dark green */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">🍴 Food Reservation</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+            </div>
+        </nav>
+    </header>
+
+    <div class="container container-main">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+ 
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Admin Login";
+}
+
+<!-- Full page background image -->
+<div class="vh-100 d-flex align-items-center justify-content-center"
+     style="background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1470&q=80') no-repeat center center; background-size: cover;">
+
+    <!-- Glass effect login card -->
+    <div class="card p-5 shadow-lg rounded-4" style="backdrop-filter: blur(15px); background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); max-width: 450px; width: 100%;">
+
+        <!-- Logo -->
+        <div class="text-center mb-4">
+            <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png"
+                 alt="Food Logo" style="width: 80px; height: 80px;" class="shadow-sm" />
+            <h3 class="mt-3 text-white">Food Reservation Admin</h3>
+        </div>
+
+        <!-- Error -->
+        @if (ViewBag.Error != null)
+        {
+            <div class="alert alert-danger text-center">@ViewBag.Error</div>
+        }
+
+        <!-- Login Form -->
+        <form asp-action="Login" method="post">
+            <div class="form-group mb-4">
+                <label class="fw-bold text-white">Username</label>
+                <input type="text" name="username" class="form-control form-control-lg"
+                       placeholder="Enter your username" required
+                       style="height: 55px; border-radius: 6px; font-size: 1.1rem;" />
+            </div>
+
+            <div class="form-group mb-4">
+                <label class="fw-bold text-white">Password</label>
+                <input type="password" name="password" class="form-control form-control-lg"
+                       placeholder="Enter your password" required
+                       style="height: 55px; border-radius: 6px; font-size: 1.1rem;" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3" style="height: 55px; font-size: 1.2rem;">Login</button>
+        </form>
+
+        <div class="text-center text-white mt-2">
+            <small>© 2025 Food Reservation System</small>
+        </div>
+    </div>
+</div>
+
+<!-- Custom styles -->
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+
+    .card input::placeholder {
+        color: #ddd;
+    }
+
+    .card input:focus {
+        box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        transition: 0.3s ease;
+    }
+</style>

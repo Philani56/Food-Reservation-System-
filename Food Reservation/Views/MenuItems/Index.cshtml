@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Food_Reservation.Models.MenuItem>
+
+@{
+    ViewData["Title"] = "Menu Items";
+}
+
+<h1 class="mb-2" style="font-size: 1.8rem; text-decoration: underline;">
+    Browse Our Menu
+</h1>
+<p class="text-muted mb-4" style="font-size: 1rem;">
+    Explore a variety of delicious meals prepared fresh every day.
+    Select your favorites and make a reservation with just a click.
+</p>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0 rounded-3">
+                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" style="height:200px; object-fit:cover; border-radius:12px 12px 0 0;" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text text-muted" style="font-size: 0.9rem;">@item.Description</p>
+                    <p class="fw-bold text-success mb-1">Price: R @item.Price</p>
+                    <p class="text-muted">Stock: @item.Stock</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <a asp-controller="Reserves" asp-action="Create" asp-route-id="@item.ItemId" class="btn btn-success btn-sm">Reserve</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Back button -->
+<div class="mt-4 text-center">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-lg shadow-sm" style="border-radius: 25px;">
+        &larr; Back to Home
+    </a>
+</div>

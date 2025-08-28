@@ -1,0 +1,95 @@
+﻿@model Food_Reservation.Models.Reserve
+
+@{
+    ViewData["Title"] = "Create Reservation";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-primary text-white text-center rounded-top">
+                    <h3 class="mb-0">🍽 Book Your Table</h3>
+                    <small>Please fill in the details below</small>
+                </div>
+                <div class="card-body p-4">
+
+                    <!-- Success message alert -->
+                    <div id="successMessage" class="alert alert-success d-none text-center fw-bold">
+                        ✅ Your reservation has been successfully created!
+                    </div>
+
+                    <form asp-action="Create" method="post" id="reservationForm">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="CustomerName" class="form-label fw-bold"></label>
+                            <input asp-for="CustomerName" class="form-control" placeholder="Enter your full name" />
+                            <span asp-validation-for="CustomerName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="CustomerEmail" class="form-label fw-bold"></label>
+                            <input asp-for="CustomerEmail" class="form-control" placeholder="example@email.com" />
+                            <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="CustomerPhone" class="form-label fw-bold"></label>
+                            <input asp-for="CustomerPhone" class="form-control" placeholder="+27 82 123 4567" />
+                            <span asp-validation-for="CustomerPhone" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ReservationDate" class="form-label fw-bold"></label>
+                            <input asp-for="ReservationDate" type="datetime-local" class="form-control" />
+                            <span asp-validation-for="ReservationDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="Status" class="form-label fw-bold"></label>
+                            <select asp-for="Status" class="form-select">
+                                <option value="Pending">Pending</option>
+                                <option value="Confirmed">Confirmed</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger"></span>
+                        </div>
+
+                        <!-- Loader -->
+                        <div id="loadingBar" class="progress mb-3 d-none">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 100%">
+                                Booking in progress...
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success btn-lg shadow-sm">
+                                ✅ Reserve Now
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center bg-light">
+                    <a asp-controller="MenuItems" asp-action="Index" class="btn btn-link">⬅ Back to Menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        // Handle form submit
+        document.getElementById("reservationForm").addEventListener("submit", function (e) {
+            // Show progress bar
+            document.getElementById("loadingBar").classList.remove("d-none");
+        });
+
+
+    </script>
+}

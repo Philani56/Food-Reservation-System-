@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Food Reservation System";
+}
+
+<div class="container mt-4">
+
+    <!-- Hero Section -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">🍴 Food Reservation System</h1>
+        <p class="fs-5 text-muted">Reserve your meals online and pick them up at your convenience.</p>
+    </div>
+
+    <!-- Action Cards -->
+    <div class="row g-4">
+
+        <!-- Customer Section -->
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <img src="https://images.pexels.com/photos/5086624/pexels-photo-5086624.jpeg" alt="Delicious food" />
+                <div class="card-body text-center">
+                    <h4 class="card-title">For Customers</h4>
+                    <p class="text-muted small">Browse our menu and reserve your favorite meals quickly.</p>
+                    <a asp-controller="MenuItems" asp-action="Index" class="btn btn-primary mb-2 w-100">
+                        🍔 Browse Menu
+                    </a>
+                    <a asp-controller="Reserves" asp-action="Search" class="btn btn-success w-100">
+                        📝 My Reservations
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Section -->
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+                <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
+                     class="card-img-top rounded-top" alt="Admin dashboard">
+                <div class="card-body text-center">
+                    <h4 class="card-title">For Admin</h4>
+                    <p class="text-muted small">Manage menu items and track all reservations.</p>
+                    <a asp-controller="Admin" asp-action="Login" class="btn btn-warning mb-2 w-100">
+                        🛠 Manage Menu
+                    </a>
+                    <a asp-controller="Admin" asp-action="Login" class="btn btn-danger w-100">
+                        📋 View Reservations
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <!-- Footer -->
+    <div class="text-center mt-5">
+        <p class="text-muted small">&copy; @DateTime.Now.Year Food Reservation System</p>
+    </div>
+</div>

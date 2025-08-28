@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container-fluid mt-4">
+    <h2 class="mb-4 text-center text-dark">Welcome</h2>
+
+    <!-- Dashboard Navigation Squares -->
+    <div class="row g-4 justify-content-center">
+
+        <div class="col-md-3 col-sm-6">
+            <a asp-action="Index" asp-controller="Reserves" class="nav-square d-flex flex-column align-items-center justify-content-center text-decoration-none dashboard-green">
+                <i class="bi bi-calendar-check fs-1 mb-2"></i>
+                <span class="fw-bold">Reservations</span>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a asp-action="Create" asp-controller="MenuItems" class="nav-square d-flex flex-column align-items-center justify-content-center text-decoration-none dashboard-orange">
+                <i class="bi bi-list fs-1 mb-2"></i>
+                <span class="fw-bold">Menu Items</span>
+            </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <a asp-action="Logout" asp-controller="Admin" class="nav-square d-flex flex-column align-items-center justify-content-center text-decoration-none dashboard-green">
+                <i class="bi bi-box-arrow-right fs-1 mb-2"></i>
+                <span class="fw-bold">Logout</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .nav-square {
+        color: white;
+        height: 150px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+        .nav-square i {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .nav-square span {
+            font-size: 1.1rem;
+        }
+
+    /* Theme colors */
+    .dashboard-orange {
+        background-color: #ff8800;
+    }
+
+        .dashboard-orange:hover {
+            background-color: #ff9f33;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+    .dashboard-green {
+        background-color: #006400;
+    }
+
+        .dashboard-green:hover {
+            background-color: #008000;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+     
+</style>
