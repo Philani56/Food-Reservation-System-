@@ -59,7 +59,7 @@ Admins can manage reservations, track statuses, and view the full reservation li
    ```
 
 ## 🎯 Future Improvements
--Add user authentication (login & registration).
+- Add user authentication (login & registration).
 - Email notifications for confirmed reservations.
 - Mobile-friendly PWA version.
 - Analytics dashboard for admins.
